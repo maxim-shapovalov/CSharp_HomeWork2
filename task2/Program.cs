@@ -13,7 +13,7 @@ x = Convert.ToInt32(Console.ReadLine()); //12345
 //Console.WriteLine(12345%10000);//2345
 //Console.WriteLine(12345%1000);//345
 //Console.WriteLine(12345%100);//45
-//Console.WriteLine("12345%10" + (12345%10));//5
+//Console.WriteLine(12345%10);//5
 
 // вычислим разрядность числа
 x_count = x;
@@ -51,8 +51,11 @@ else if (count > 3) //если число более, чем трезначно�
 
 
 
-//Console.WriteLine("multiplier = " + multiplier);
-//z = x / (10 * (count - 3));
+
+
+
+
+
 
 
 
