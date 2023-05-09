@@ -1,16 +1,14 @@
 ﻿// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-bool match = false; //true если найдена разрядность введенного числа
 int multiplier = 10; //множитель
 int count = 0; // разрядность введенного числа
 int x_count;
-int x, x1, x2, f = -1, z = -10; 
-int result = -1;
+int x, f = -1, z = -10; 
 
-//Console.Write("Введите целое число ");
-//int x = Convert.ToInt32(Console.ReadLine()); //12345
+Console.Write("Введите целое число ");
+x = Convert.ToInt32(Console.ReadLine()); //12345
 
-x = 441065464;
+//x = 4402;
 
 //Console.WriteLine(12345%10000);//2345
 //Console.WriteLine(12345%1000);//345
@@ -20,31 +18,40 @@ x = 441065464;
 // вычислим разрядность числа
 x_count = x;
 while (x_count > 0)
-{
-    count++;
-    x_count = x_count / 10;
-}
-
-if (x < 100) //если третьей цифры нет
-{
-    Console.Write("Третьей цифры нет!");
-}
-else //если третья цифра есть
-{
-    f = count - 3;
-    for (int i = 1; i < f; i++)
     {
-        multiplier = multiplier * 10;
-        z = x / multiplier;
-        Console.WriteLine(z);
-        
+        count++;
+        x_count = x_count / 10;
     }
-    //z = z % 10;
-    Console.WriteLine("z = " + z);
+Console.WriteLine("Разрядность введенного числа равна = " + count);
+
+if (count < 3) //если третьей цифры нет
+{
+    Console.Write("Число двузначное, третьей цифры нет!");
 }
+
+else if (count == 3) //если число трехзначное
+{
+        z = x % 10;
+        Console.WriteLine("Третья цифра = " + z);   
+}
+
+else if (count > 3) //если число более, чем трезначное
+    {
+        f = count - 3;
+        for (int i = 1; i < f; i++)
+        {
+            multiplier = multiplier * 10;
+            z = x / multiplier;
+        }
+        z = z % 10;
+        Console.WriteLine("Третья цифра = " + z);
+    }
+
+
+
+
+
 //Console.WriteLine("multiplier = " + multiplier);
-
-
 //z = x / (10 * (count - 3));
 
 
